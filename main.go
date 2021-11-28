@@ -19,7 +19,7 @@ func printDayProgress() {
 
 	fmt.Print("Day: [")
 
-	for i := 0; i <= 100; i += 10 {
+	for i := 0; i < 100; i += 10 {
 		if i < percentage {
 			fmt.Print("#")
 		} else {
