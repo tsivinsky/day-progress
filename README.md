@@ -21,3 +21,9 @@ By default, day-progress will show only day progress but you can add flags to cu
 ```bash
 day-progress -y
 ```
+
+#### Change progress symbol
+
+```bash
+day-progress --symbol [symbol]
+```

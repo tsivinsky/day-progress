@@ -8,11 +8,13 @@ import (
 )
 
 var (
-	showYear bool
+	showYear       bool
+	progressSymbol string
 )
 
 func main() {
 	flag.BoolVar(&showYear, "y", false, "day-progress -y")
+	flag.StringVar(&progressSymbol, "symbol", "#", "day-progress --symbol #")
 
 	flag.Parse()
 
@@ -32,7 +34,7 @@ func printYearProgress() {
 	fmt.Print("Year: [")
 
 	for i := 0; i < 100; i += 10 {
-		fmt.Print("#")
+		fmt.Print(progressSymbol)
 	}
 
 	fmt.Printf("] %d%%\n", percentage)
@@ -53,7 +55,7 @@ func printDayProgress() {
 
 	for i := 0; i < 100; i += 10 {
 		if i < percentage {
-			fmt.Print("#")
+			fmt.Print(progressSymbol)
 		} else {
 			fmt.Print(" ")
 		}
